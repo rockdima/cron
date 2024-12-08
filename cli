@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Entry point from cli
+ */
+
+list($controller, $method) = explode(':', $argv[1]);
+
+// run the app
+require_once __DIR__ . '/app/app.php';
+$app($controller, $method, array_slice($argv, 2));
